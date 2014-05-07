@@ -4,11 +4,13 @@ import datetime
 
 # Create your models here.
 
+
 FILETYPE_CHOICES = (
     ('python', 'Python'),
     ('json', 'JSON'),
     ('c', 'C'),
 )
+
 
 class Text(models.Model):
     body = models.TextField(u'Corpo do código')
@@ -43,6 +45,7 @@ class Text(models.Model):
             self.created = datetime.datetime.now()
         else:
             self.created = datetime.datetime.now() - datetime.timedelta(days=1)
+
 
 class Category(models.Model):
     name = models.CharField(max_length=20)
