@@ -42,7 +42,7 @@ class Text(models.Model):
         if value == True:
             self.created = datetime.datetime.now()
         else:
-            self.created = datetime.datetime.now() - datetime.timedelta(1)
+            self.created = datetime.datetime.now() - datetime.timedelta(days=1)
 
 class Category(models.Model):
     name = models.CharField(max_length=20)
