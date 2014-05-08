@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.template import RequestContext, loader, Context, Template
 
 from .models import Text
 
@@ -26,4 +27,9 @@ def texts_list(request):
 
 
 def texts_detail(request, text_id=None):
-    return HttpResponse('<html><h1>Texto #%s</h1></html>' % text_id)
+    t = Text.objects.all()[0]
+
+    return render(request, 'texts/list.html', {
+        'content': text_id,
+        'text': t,
+    })

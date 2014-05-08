@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{% block title %}Pastebong!{% endblock title %}</title>
+    </head>
+    <body>
+        {% include '_menu.html' with title='Foo' %}
+
+        {% block content %}
+        {% endblock content %}
+    </body>
+</html>

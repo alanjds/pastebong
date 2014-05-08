@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    {{ block.super }} - 
+    {{ text.name|default:'(unnamed)' }}
+{% endblock title %}
+
+
+{% block content %}
+        <h1>Texto #{{ text.pk }}: {{ text.get_upper }}</h1>
+        <tt>
+            {{ text.body }}
+        </tt>
+        {% block subcontent %}
+        {% endblock subcontent %}
+{% endblock content %}

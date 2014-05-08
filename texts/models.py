@@ -46,6 +46,9 @@ class Text(models.Model):
         else:
             self.created = datetime.datetime.now() - datetime.timedelta(days=1)
 
+    def get_upper(self):
+        return unicode(self).upper()
+
 
 class Category(models.Model):
     name = models.CharField(max_length=20)
