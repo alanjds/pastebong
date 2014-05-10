@@ -12,6 +12,12 @@
         <tt>
             {{ text.body }}
         </tt>
+        
+        <form method='post'>
+            {% csrf_token %}
+            <input name='submit' type='submit' value='ENVIAR'>
+        </form>
+
         {% block subcontent %}
         {% endblock subcontent %}
 {% endblock content %}

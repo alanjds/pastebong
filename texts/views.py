@@ -27,9 +27,17 @@ def texts_list(request):
 
 
 def texts_detail(request, text_id=None):
+    import ipdb; ipdb.set_trace()
+
     t = Text.objects.all()[0]
 
     return render(request, 'texts/list.html', {
         'content': text_id,
         'text': t,
     })
+
+def ajax_data(request, text_id=None):
+    if request.is_ajax():
+        raise NotImplementedError()
+    else:
+        raise Http404
